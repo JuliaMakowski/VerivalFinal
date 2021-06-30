@@ -1,16 +1,27 @@
 package com.bcopstein.entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Passageiro{
 	private String cpf;
 	private String nome;
 	private int pontuacaoAcumulada;
 	private int qtdadeAvaliacoes;
+	private static ArrayList<Passageiro> passageiroList = new ArrayList<>();
 
 	public static Passageiro novoPassageiro(String cpf, String nome){
-		return new Passageiro(cpf,nome,8,1);
+		Passageiro passageiro = new Passageiro(cpf,nome,8,1);
+		passageiroList.add(passageiro);
+		return passageiro;
 	}
-
-	public static Passageiro passageiroExistente(String cpf, String nome, int pontuacaoAcumulada, int qtdadeAvaliacoes){
+	//passageiro existene só criava novo pass
+	public static Passageiro passageiroExistente(String cpf, String nome,int pontuacaoAcumulada,int qtdadeAvaliacoes){
+		for(Passageiro passageiro : passageiroList){
+			if(passageiro.cpf.equals(cpf)){
+				return passageiro;
+			}
+		}
 		return new Passageiro(cpf,nome,pontuacaoAcumulada,qtdadeAvaliacoes);
 	}
 
