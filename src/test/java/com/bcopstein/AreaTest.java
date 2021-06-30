@@ -69,11 +69,10 @@ public class AreaTest {
         assertEquals(value,expected);
     }
 
-    @ParameterizedTest
-    @CsvSource("20,60,false")
-    public void testaEqualsDiferentObject(int x1,int y1,boolean expected){
-        Ponto ponto = new Ponto(x1,y1);
+    @Test
+    public void testaEqualsDiferentObject(){
+        Ponto ponto = new Ponto(20,60);
         boolean value = this.area.equals(ponto);
-        assertEquals(value,expected);
+        assertEquals(value,false);
     }
 }

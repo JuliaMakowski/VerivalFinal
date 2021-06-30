@@ -1,7 +1,5 @@
 package com.bcopstein;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -14,6 +12,8 @@ import com.bcopstein.entidades.geometria.Reta;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class RoteiroTest {
     private List<Bairro> bairros;
 
@@ -25,6 +25,12 @@ public class RoteiroTest {
         bairros.add(Bairro.novoBairroRetangular("Moinhos de Vento", new Ponto(20,30), 20, 10, 30.0));
         bairros.add(Bairro.novoBairroRetangular("Auxiliadora", new Ponto(40,30), 20, 10, 20.0));
         bairros.add(Bairro.novoBairroRetangular("Boa Vista", new Ponto(40,20), 20, 10, 20.0));
+    }
+    @Test
+    public void testaConstrutor(){
+        Roteiro roteiro = new Roteiro(bairros.get(0), bairros.get(1), bairros);
+        assertEquals(roteiro.getBairroOrigem(), bairros.get(0));
+        assertEquals(roteiro.getBairroDestino(), bairros.get(1));
     }
 
     @Test
@@ -44,5 +50,14 @@ public class RoteiroTest {
         esperado.add(bairros.get(4));
         Collection<Bairro> observado = roteiro.bairrosPercoridos();
         assertEquals(esperado, observado);
+    }
+
+    @Test
+    public void testaEquals(){
+        Roteiro roteiro = new Roteiro(bairros.get(0), bairros.get(1), bairros);
+        Roteiro roteiroIgual = new Roteiro(bairros.get(0), bairros.get(1), bairros);
+        Roteiro roteiroDiferente = new Roteiro(bairros.get(0), bairros.get(2), bairros);
+        assertEquals(roteiroIgual, roteiro);
+        assertNotEquals(roteiroDiferente, roteiro);
     }
 }
