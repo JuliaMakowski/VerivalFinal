@@ -31,6 +31,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/test/java/com/bcopstein/CalculoCustoViagemBasicoTest.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/test/java/com/bcopstein/CalculoCustoViagemRelampagoTest.java">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/test/java/com/bcopstein/CustoViagemTest.java">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/test/java/com/bcopstein/ViagemTest.java">
           <value>
             <Attribute>
