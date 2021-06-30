@@ -1,15 +1,16 @@
 package com.bcopstein.entidades;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Viagem{
     private int id;
-    private LocalDateTime dataHora;
+    private LocalDate dataHora;
     private Roteiro roteiro;
     private Passageiro passageiro;
     private double valorCobrado;
 
-    public Viagem(int id, LocalDateTime dataHora, Roteiro roteiro, Passageiro passageiro,double valorCobrado){
+    public Viagem(int id, LocalDate dataHora, Roteiro roteiro, Passageiro passageiro,double valorCobrado){
         this.id = id;
         this.dataHora = dataHora;
         this.roteiro = roteiro;
@@ -21,7 +22,7 @@ public class Viagem{
         return id;
     }
 
-    public LocalDateTime getDataHora() { 
+    public LocalDate getDataHora() {
         return dataHora;
     }
 

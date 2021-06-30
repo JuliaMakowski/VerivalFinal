@@ -1,5 +1,6 @@
 package com.bcopstein.casosDeUso.Servicos;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
@@ -48,7 +49,7 @@ public class ServicosPassageiro {
     }
 
     public Viagem criaViagem(int id,Roteiro roteiro,String cpfPassageiro){
-        LocalDateTime data = LocalDateTime.now();
+        LocalDate data = LocalDate.now();
         Passageiro passageiro = repPassageiros.recuperaPorCPF(cpfPassageiro);
         double valorCobrado = custoViagem.custoViagem(roteiro, passageiro);
         return new Viagem(id,data,roteiro,passageiro,valorCobrado);
