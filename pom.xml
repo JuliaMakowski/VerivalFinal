@@ -7,7 +7,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>15</java.version>
         <sonar.projectKey>JuliaMakowski_VerivalFinal</sonar.projectKey>
         <sonar.organization>juliamakowski</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
