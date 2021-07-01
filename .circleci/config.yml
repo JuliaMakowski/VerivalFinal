@@ -14,4 +14,4 @@ workflows:
   main:
     jobs:
       - build:
-          context: ../VerivalFinal
+          context: /../VerivalFinal
